@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APH-RESCAT | Emergencias y Capacitación</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root{
+  --azul:#081529;
+  --naranja:#ff6600;
+  --gris:#f4f4f4;
+  --negro:#0b0b0b;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Roboto',sans-serif;
+}
+
+body{
+  background:var(--gris);
+  color:#000;
+}
+
+/* HEADER */
+header{
+  background:var(--negro);
+  color:#fff;
+  padding:1rem 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:3px solid var(--naranja);
+}
+
+.logo-container{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo-img{
+  width:50px;
+  border-radius:6px;
+}
+
+.logo-text{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.8rem;
+}
+
+nav a{
+  color:#fff;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+nav a:hover{color:var(--naranja);}
+
+/* HERO */
+.hero{
+  background:linear-gradient(rgba(8,21,41,.8),rgba(8,21,41,.8)),
+  url("https://i.postimg.cc/SYqrxQGG/7b42c385-d9c0-4166-8906-e477de179a10-1.jpg") center/cover no-repeat;
+  padding:120px 10%;
+  color:#fff;
+}
+
+.hero h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:4rem;
+  color:var(--naranja);
+}
+
+.hero p{max-width:700px;margin:20px 0;}
+
+.btn{
+  background:var(--naranja);
+  color:#fff;
+  padding:15px 30px;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:700;
+  display:inline-block;
+  transition:all .3s ease;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+.btn-outline{
+  background:transparent;
+  color:var(--naranja);
+  border:2px solid var(--naranja);
+}
+
+.btn-outline:hover{
+  background:var(--naranja);
+  color:#fff;
+}
+
+.btn-primary{
+  background:var(--azul);
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:#051028;
+}
+
+/* SECCIONES */
+.container{
+  max-width:1300px;
+  margin:auto;
+  padding:80px 5%;
+}
+
+.section-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:3rem;
+  text-align:center;
+  color:var(--azul);
+  margin-bottom:40px;
+}
+
+.row{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+
+.card{
+  background:#fff;
+  padding:35px;
+  border-radius:12px;
+  text-align:center;
+  border-top:5px solid var(--azul);
+  transition: 0.3s;
+}
+
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 12px 25px rgba(0,0,0,.2);
+}
+
+.card i{
+  font-size:3rem;
+  color:var(--naranja);
+  margin-bottom:15px;
+}
+
+.card .price{
+  font-size:2rem;
+  font-weight:700;
+  color:var(--naranja);
+  margin:15px 0;
+}
+
+/* GALERÍA */
+.galeria-aph{
+  background:#f5f5f5;
+  padding:70px 5%;
+}
+
+.galeria-fila{
+  margin-bottom:70px;
+}
+
+.galeria-fila h3{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.4rem;
+  color:var(--azul);
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.galeria-fila p{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.galeria-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+}
+
+.galeria-grid img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,.15);
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  color:#fff;
+  padding:70px 5%;
+}
+
+.footer-content{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1.5fr 1fr;
+  gap:40px;
+}
+
+.footer-contact p,
+.footer-contact a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#fff;
+  text-decoration:none;
+  margin-bottom:10px;
+}
+
+.footer-social a{
+  background:var(--naranja);
+  width:38px;
+  height:38px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  margin-right:10px;
+  color:#fff;
+}
+
+/* BOTÓN WHATSAPP */
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25d366;
+  color:#fff;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2.2rem;
+  box-shadow:0 6px 20px rgba(0,0,0,.3);
+  z-index:999;
+  text-decoration:none;
+  transition:transform .3s;
+}
+
+.whatsapp-float:hover{
+  transform:scale(1.1);
+}
+
+@media(max-width:900px){
+  header{flex-direction:column;}
+  nav{margin-top:15px;}
+  .footer-content{grid-template-columns:1fr;text-align:center;}
+  .footer-contact p,
+  .footer-contact a{justify-content:center;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-container">
+    <img src="https://i.postimg.cc/SYqrxQGG/7b42c385-d9c0-4166-8906-e477de179a10-1.jpg" class="logo-img">
+    <h1 class="logo-text">EMPRESA APH-RESCAT</h1>
+  </div>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#planes">Planes</a>
+    <a href="#capacitaciones">Capacitaciones</a>
+    <a href="#galeria">Certificaciones</a>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <h1>ATENCIÓN PREHOSPITALARIA Y CAPACITACIÓNES</h1>
+  <p>
+    Brindamos servicios de atención prehospitalaria y programas de capacitación dirigidos a empresas e instituciones educativas,
+    enfocados en la prevención, preparación y respuesta eficaz ante emergencias.
+  </p>
+  
+  <div=space-between>
+
+  <a href="#servicios" class="btn">Ver Servicios</a>
+</section>
+
+<section class="container" id="nosotros">
+  <h2 class="section-title">Quiénes Somos</h2>
+  <div class="row">
+    <div class="card">
+      <i class="fas fa-bullseye"></i>
+      <h3>Misión</h3>
+      <p>Brindar servicios profesionales de Atención Prehospitalaria, rescate y capacitación en emergencias, 
+         con altos estándares técnicos, éticos y humanos, garantizando una respuesta oportuna, 
+         segura y eficiente para la protección de la vida, la salud y la integridad de las personas en entornos urbanos,
+         rurales e industriales.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-eye"></i>
+      <h3>Visión</h3>
+      <p>Ser una empresa líder y referente nacional en servicios de Atención Prehospitalaria y rescate especializado, 
+         reconocida por su excelencia operativa, innovación constante, personal altamente capacitado y compromiso con la seguridad y la prevención, 
+         contribuyendo al fortalecimiento de la cultura de emergencias en la sociedad.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="planes">
+  <h2 class="section-title">Nuestros Planes</h2>
+  <div class="row">
+    <div class="card">
+      <h3>PLAN BÁSICO</h3>
+      <p class="price">$15</p>
+      <p>Atención esencial y soporte inicial para empresas pequeñas.</p>
+      <a href="https://wa.me/593989557990" target="_blank" class="btn btn-outline">Solicitar</a>
+    </div>
+    <div class="card">
+      <h3>PLAN INTERMEDIO</h3>
+      <p class="price">$25</p>
+      <p>Coordinación integral bajo protocolos internacionales APH-RESCAT.</p>
+      <a href="https://wa.me/593989557990" target="_blank" class="btn btn-primary">Solicitar</a>
+    </div>
+    <div class="card">
+      <h3>PLAN AVANZADO</h3>
+      <p class="price">$45</p>
+      <p>Cobertura total 24/7 con equipos de intervención avanzada.</p>
+      <a href="https://wa.me/593989557990" target="_blank" class="btn btn-outline">Consultar</a>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="servicios">
+  <h2 class="section-title">NUESTROS SERVICIOS</h2>
+  <div class="row">
+    <div class="card"><i class="fas fa-ambulance"></i><h3>Traslado Crítico</h3></div>
+    <div class="card"><i class="fas fa-mountain"></i><h3>Rescate Técnico</h3></div>
+    <div class="card"><i class="fas fa-shield-alt"></i><h3>Cobertura de Eventos</h3></div>
+  </div>
+</section>
+
+<section class="container" id="capacitaciones">
+  <h2 class="section-title">CAPACITACIÓNES</h2>
+  <div class="row">
+    <div class="card"><i class="fas fa-heartbeat"></i><h3>Primeros Auxilios</h3></div>
+    <div class="card"><i class="fas fa-syringe"></i><h3>Inyectología</h3></div>
+    <div class="card"><i class="fas fa-user-md"></i><h3>RCP y DEA</h3></div>
+  </div>
+</section>
+<div=space-between></div>
+<section class="galeria-aph" id="galeria">
+  <div class="galeria-fila">
+    <h3>NUESTRAS ACTIVIDADES</h3>
+    <div class="galeria-grid">
+      <img src="https://res.cloudinary.com/dx6fthw2n/image/upload/v1769489379/WhatsApp_Image_2026-01-26_at_11.28.05_PM_xay8y2.jpg">
+      <img src="https://res.cloudinary.com/dx6fthw2n/image/upload/v1769489759/WhatsApp_Image_2026-01-26_at_11.53.33_PM_weghn2.jpg">
+      <img src="https://res.cloudinary.com/dx6fthw2n/image/upload/v1769489776/WhatsApp_Image_2026-01-26_at_11.54.04_PM_dssayd.jpg">
+      <img src="https://res.cloudinary.com/dx6fthw2n/image/upload/v1769545652/WhatsApp_Image_2026-01-27_at_3.24.47_PM_fl3ehw.jpg">
+  </div>
+<div=space-between></div>
+
+  <div class="galeria-fila">
+    <h3>CERTIFICADOS DE APROBACIÓN</h3>
+    <p>Constancia de capacitación y preparación ante emergencias.</p>
+    <div class="galeria-grid">
+      <img src="https://res.cloudinary.com/dx6fthw2n/image/upload/v1769919824/Gemini_Generated_Image_pwu9lzpwu9lzpwu9_pnwk6a.png">
+      <img src="https://res.cloudinary.com/dx6fthw2n/image/upload/v1769920516/Gemini_Generated_Image_1c430q1c430q1c43_bfydm3.png">
+      <img src="https://res.cloudinary.com/dx6fthw2n/image/upload/v1769919720/Gemini_Generated_Image_8y3jrh8y3jrh8y3j_mlbd5f.png">
+      <img src="https://res.cloudinary.com/dx6fthw2n/image/upload/v1769919691/Gemini_Generated_Image_u8kxsgu8kxsgu8kx_yunnve.png">
+      <img src="https://res.cloudinary.com/dx6fthw2n/image/upload/v1769919669/Gemini_Generated_Image_hhjy10hhjy10hhjy_awkzu6.png">
+      <img src="https://res.cloudinary.com/dx6fthw2n/image/upload/v1769919589/Gemini_Generated_Image_2y03772y03772y03_muth3g.png">
+      <img src="https://res.cloudinary.com/dx6fthw2n/image/upload/v1769921381/ChatGPT_Image_31_ene_2026_23_53_40_umjktf.png">
+      <img src="https://res.cloudinary.com/dx6fthw2n/image/upload/v1769929078/ChatGPT_Image_1_feb_2026_02_01_55_uq4fa0.png">
+      </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div>
+      <h2>APH<span style="color:var(--naranja)">RESCAT</span></h2>
+      <p>Referentes en soluciones integrales de respuesta ante emergencias.</p>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contacto</h3>
+      <p><i class="fas fa-phone"></i> 098 955 7990</p>
+      <a href="mailto:administracion@aph-rescat.com">
+        <i class="fas fa-envelope"></i> administracion@aph-rescat.com
+      </a>
+    </div>
+
+    <div class="footer-social">
+      <h3>Redes Sociales</h3>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/593989557990" target="_blank" class="whatsapp-float" aria-label="Contacto WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
